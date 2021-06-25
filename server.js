@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 // var session = require('express-session');
 // var passport = require('passport');
-// var methodOverride = require('method-override');
+var methodOverride = require('method-override');
 
 // Process the .env VERY early
 require('dotenv').config();
