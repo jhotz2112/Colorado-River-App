@@ -1,0 +1,19 @@
+<%- include('../partials/header') %>
+
+<form id="new-form" action="/rivers" method="POST">
+    <label>Title:</label>
+    <input type="text" name="title">
+        <label>Difficulty</label>
+    <select name="adminDifficulty">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+    </select>
+    <label>Open:</label>
+    <input type="checkbox" name="open" checked>
+    <input type="submit" value="Add River">
+  </form>
+
+<%- include('../partials/footer') %>
