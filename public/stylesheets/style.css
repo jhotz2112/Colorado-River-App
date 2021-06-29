@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
   font-family: Helvetica;
-  color: #424748;
+  color: #f7f7f7;
 }
 
 body {
@@ -12,6 +12,8 @@ body {
   grid-template-areas: 
     "nav"
     "main"
+    "add";
+  background-image: url("https://i.imgur.com/fLH4o6y.jpeg");
 }
 
 body > nav {
@@ -34,7 +36,7 @@ body > main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #E8ECEB;
+  background-color: #181a1a;
   padding: 20px;
   overflow-y: scroll;
 }
@@ -144,7 +146,7 @@ li {
 }
 
 hr {
-  color: #424748
+  color: #000000
 }
 
 #badge-container {

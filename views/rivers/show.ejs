@@ -4,14 +4,13 @@
   <div>River: </div>
   <div><%= river.title %></div>
   <div>Difficulty: </div>
-  <div><%= river.adminDifficulty %></div>
+  <div><%= river.difficulty %></div>
   
-<br><br>
 <h2>Comments</h2>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/rivers/<%= river._id %>/comments">
     <label>Review:</label>
-    <textarea name="content"></textarea>
+    <textarea name="content"></textarea><br>
     <label>Rating:</label>
     <select name="userDifficulty">
       <option value="Beginner">Beginner</option>
@@ -25,7 +24,6 @@
   <table>
     <thead>
       <tr>
-        <th>User</th>
         <th>Date</th>
         <th>Comment</th>
         <th></th>

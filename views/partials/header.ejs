@@ -11,9 +11,9 @@
 <body>
     <nav>
       <img src="https://i.imgur.com/EBCKVZk.jpeg">
-      <a href="/rivers" <%- title === 'All Rivers' ? 'class="active"' : '' %>>ALL RIVERS</a>
+      <a href="/rivers" <%- title === 'All Rivers' ? 'class="active"' : '' %>>ALL LAKES/RIVERS</a>
       <% if (user) { %>
-        <a href="/rivers/new" <%- title === 'Add River' ? 'class="active"' : '' %>>ADD RIVER</a>
+        <a href="/rivers/new" <%- title === 'Add River' ? 'class="active"' : '' %>>ADD LAKE/RIVER</a>
         <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
