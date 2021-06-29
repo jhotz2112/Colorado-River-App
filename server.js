@@ -12,7 +12,7 @@ require('./config/database');
 require('./config/passport');
 
 var indexRouter = require('./routes/index');
-// var riversRouter = require('./routes/rivers');
+var riversRouter = require('./routes/rivers');
 var app = express();
 
 // view engine setup
@@ -42,7 +42,7 @@ app.use(function(req, res, next) {
 });
 
 app.use('/', indexRouter);
-// app.use('/rivers', riversRouter);
+app.use('/rivers', riversRouter);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

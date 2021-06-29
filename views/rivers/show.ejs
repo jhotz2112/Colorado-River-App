@@ -1,30 +1,13 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Title: </div>
-  <div><%= river.title %></div>
+  <div>River: </div>
+  <div><%= river.name %></div>
   <div>Difficulty: </div>
   <div><%= river.adminDifficulty %></div>
   <div>Open: </div>
   <div><%= river.open ? 'Yes' : 'Nope' %></div>
-  <!-- start cast list -->
-  <!-- <div>Cast:</div>
-  <ul>
-    <%- movie.cast.map(p => 
-      `<li>${p.name} <small>${p.born.toLocaleDateString()}</small></li>`
-    ).join('') %>
-  </ul> -->
-  <!-- end cast list
-</section> -->
-<!-- add to cast form below this comment -->
-<!-- <form id="add-per-to-cast" action="/movies/<%= movie._id %>/performers" method="POST">
-  <select name="performerId">
-    <%- performers.map(p => 
-      `<option value="${p._id}">${p.name}</option>`
-    ).join('') %>
-  </select>
-  <button type="submit">Add to Cast</button>
-</form> -->
+  
 <br><br>
 <h2>Comments</h2>
 <% if (user) { %>
@@ -42,20 +25,20 @@
     <input type="submit" value="Add Comment">
   </form>
 <% } %>
-<% if (movie.reviews.length) { %>
+<% if (river.comments.length) { %>
   <table>
     <thead>
       <tr>
         <th>User</th>
         <th>Date</th>
-        <th>Review</th>
+        <th>Comment</th>
         <th>Rating</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% let total = 0 %>
-      <% movie.reviews.forEach(function(r) { %>
+      <% river.comments.forEach(function(r) { %>
         <% total += r.rating %>
         <tr>
           <td class="review-user"><img src="<%= r.userAvatar %>"><%= r.userName %></td>
@@ -64,7 +47,7 @@
           <td><%= r.rating %></td>
           <td>
             <% if (user && user._id.equals(r.user)) { %>
-              <form action="/reviews/<%= r._id %>?_method=DELETE" method="POST">
+              <form action="/comments/<%= r._id %>?_method=DELETE" method="POST">
                 <button type="submit">X</button>
               </form>
             <% } %>
@@ -73,12 +56,12 @@
       <% }); %>
       <tr>
         <td colspan="3"></td>
-        <td><strong><%= (total / movie.reviews.length).toFixed(1) %></strong></td>
+        <td><strong><%= (total / river.comments.length).toFixed(1) %></strong></td>
       </tr>
     </tbody>
   </table>
 <% } else { %>
-  <h5>No Reviews Yet</h5>
+  <h5>No Comments Yet</h5>
 <% } %> -->
 
 

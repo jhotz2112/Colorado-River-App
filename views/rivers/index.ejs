@@ -3,16 +3,16 @@
 <table id="list">
     <thead>
       <tr>
-        <th>Title</th>
-        <th>Release<br>Year</th>
+        <th>Name</th>
+        <th>Date<br>Added</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% rivers.forEach(function(r) { %>
         <tr>
-          <td><%= r.title %></td>
-          <td><%= r.releaseYear %></td>
+          <td><%= r.name %></td>
+          <td><%= r.dateAdded %></td>
           <td><a href="/rivers/<%= r._id %>">DETAILS</a></td>
         </tr>
         <% }); %>

@@ -3,7 +3,7 @@ const router = express.Router();
 const commentsCtrl = require('../controllers/comments');
 const isLoggedIn = require('../config/auth');
 
-router.post('/rivers/:id/comments', isLoggedIn, reviewsCtrl.create);
-router.delete('/comments/:id', isLoggedIn, reviewsCtrl.delete);
+router.post('/rivers/:id/comments', isLoggedIn, commentsCtrl.create);
+router.delete('/comments/:id', isLoggedIn, commentsCtrl.delete);
 
 module.exports = router;
