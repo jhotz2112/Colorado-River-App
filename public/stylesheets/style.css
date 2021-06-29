@@ -149,7 +149,6 @@ hr {
 
 #badge-container {
   display: flex;
-  /* padding: 1rem; */
   width: 80%;
   border: 2px solid #B8C0C2;
   border-radius: .5rem;

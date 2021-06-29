@@ -3,17 +3,27 @@
 <table id="list">
     <thead>
       <tr>
-        <th>Name</th>
-        <th>Date<br>Added</th>
+        <th>River Name</th>
+        <th>GPS Location</th>
+        <th>Difficulty</th>
+        <th>Date<br>Visited</th>
+        <th>Open</th>
         <th></th>
       </tr>
     </thead>
     <tbody>
       <% rivers.forEach(function(r) { %>
         <tr>
-          <td><%= r.name %></td>
-          <td><%= r.dateAdded %></td>
-          <td><a href="/rivers/<%= r._id %>">DETAILS</a></td>
+          <td><%= r.title %></td>
+          <td><%= r.longitude %> / <%= r.lattitude %></td>
+          <td><%= r.difficulty %></td>
+          <td><%= r.dateVisited %></td>
+          <td><% if (r.open --- true) { %>
+            Yes
+            <%} else {%>
+            No 
+            <% } %></td>
+          <td><a href="/rivers/<%= r._id %>">Comments</a></td>
         </tr>
         <% }); %>
       </tbody>

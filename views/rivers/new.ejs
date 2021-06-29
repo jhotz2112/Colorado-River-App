@@ -1,26 +1,31 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-<h2>Enter a New River</h2>
-<form action="/rivers" method="POST">
-  <label>River Name:
-    <input type="text" name="River-Name">
-    </select>
-  </label><br>
-  <label>Location:
-        Longitude:<input type="text" name="Latitude">
-        Latitude:<input type="text" name="Longitude">
-    </select>
-  </label><br>
-  <label for="departs">Date Visited:</label>
-    <input type="datetime-local" id="departs"
-       name="departure" value= <%= function () {
-        return new Date().getFullYear();
-      } %>
-       min: max:
-     }
-  </label><br>
-  <input type="submit" value="Add River">
-</form>
+    <section id="show-page">
+        <h2>Enter a New River</h2>
+        <form action="/rivers" method="POST">
+            <label>River Name:
+                <input type="text" name="title">
+                </select>
+            </label><br>
+            <label>GPS Location:<br>
+                Latitude:<input type="text" name="latitude">
+                Longitude:<input type="text" name="longitude">
+                </select></label><br>
+                <label>Difficulty:
+                    <select name="difficulty">
+                        <option value="Beginner">Beginner</option>
+                        <option value="Intermediate">Intermediate</option>
+                        <option value="Expert" selected>Expert</option>
+                    </select>
+                </label><br>
+                <label for="dateVisited">Date Visited:</label>
+                <input type="datetime-local" id="dateVisited" name="dateVisited" value=<%=function () { return new
+                    Date().getFullYear(); } %>
+                    <br><br>
+                <label>Open:</label>
+                <input type="checkbox" name="open" checked>
+                </label><br>
+                <input type="submit" value="Add River">
+        </form>
 
 <%- include('../partials/footer') %>

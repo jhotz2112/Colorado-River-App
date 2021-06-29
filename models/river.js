@@ -2,35 +2,38 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const commentSchema = new Schema({
-  content: {type: String, required: true},
-  rating: {type: Number, min: 1, max: 5, default: 5},
-  user: {type: Schema.Types.ObjectId, ref: 'User'},
-  userName: String,
-  userAvatar: String
+    content: { type: String, required: true },
+    userDifficulty: {
+        type: String,
+        enum: ['Beginner', 'Intermediate', 'Expert'],
+    },
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
 }, {
-  timestamps: true
+    timestamps: true
 });
 
 const riverSchema = new Schema({
-  title: {
-    type: String,
-    required: true
-  },
-  datePosted: {
-    type: Number,
-    default: function () {
-      return new Date().getFullYear();
-    }
-  },
-  adminDifficulty: String,
-  cast: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Rating'
-  }],
-  open: { type: Boolean, default: false },
-  comments: [commentSchema]
+    title: {
+        type: String,
+        required: true
+    },
+    latitude: String,
+    longitude: String,
+    difficulty: {
+        type: String,
+        enum: ['Beginner', 'Intermediate', 'Expert'],
+    },
+    open: { type: Boolean, default: false },
+    dateVisited: {
+        type: Date,
+        default: function () {
+            return new Date().getFullYear();
+        }
+    },
+    comments: [commentSchema],
+    user: { type: Schema.Types.ObjectId, ref: 'User' },
 }, {
-  timestamps: true
+    timestamps: true
 });
 
 module.exports = mongoose.model('River', riverSchema);
