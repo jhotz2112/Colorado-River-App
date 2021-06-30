@@ -20,7 +20,7 @@ body {
 
 body > nav {
   grid-area: nav;
-  background-color: #4582bf;
+  background-color: #4072a4;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -28,9 +28,23 @@ body > nav {
 }
 
 nav > img {
-  width: 34px;
+  width: 50px;
   object-fit: contain;
   margin-right: auto;
+}
+
+#div {
+  font-size: 2vmin;
+  padding-left: 1vmin;
+  display: flex;
+  align-items: center;
+}
+
+#div1 {
+  font-size: 2vmin;
+  padding-left: 1vmin;
+  display: flex;
+  align-items: center;
 }
 
 body > main {
@@ -85,6 +99,7 @@ form *,
 
 table {
   font-size: 20px;
+  /* All rivers */
 }
 
 table thead th {
@@ -123,19 +138,9 @@ table td {
   font-weight: bold;
 }
 
-#add-review-form,
-#add-performer-form {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-}
 
-#add-review-form input[type="submit"],
-#add-performer-form input[type="submit"]  {
-  width: 10rem;
-  grid-column: 2 / 3;
-}
+
+
 /* 
 ul {
   margin: 0 0 1rem;
@@ -183,11 +188,6 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.review-user img {
-  border-radius: 50%;
-  height: 40px;
 }
 
 input {

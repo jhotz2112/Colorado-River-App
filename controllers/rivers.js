@@ -25,10 +25,8 @@ function newRiver(req, res) {
 }
 
 function create(req, res) {
-  // convert nowShowing's checkbox of nothing or "on" to boolean
   req.body.open = !!req.body.open;
   req.body.user = req.user._id
-  // ensure empty inputs are removed so that model's default values will work
   for (let key in req.body) {
     if (req.body[key] === '') delete req.body[key];
   }

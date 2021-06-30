@@ -1,12 +1,12 @@
 <%- include('../partials/header') %>
 
 <section id="show-page">
-  <div>Lake/River: </div>
-  <div><%= river.title %></div>
-  <div>Difficulty: </div>
-  <div><%= river.difficulty %></div>
+  <div id="div1">Lake/River: </div>
+  <div id="div"><%= river.title %></div>
+  <div id="div1">Difficulty: </div>
+  <div id="div"><%= river.difficulty %></div>
   
-<h2>Comments</h2>
+<h2>Comments</h2><br>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/rivers/<%= river._id %>/comments">
     <label>Review:</label>
@@ -19,7 +19,7 @@
     </select>
     <input type="submit" value="Add Review">
   </form>
-<% } %>
+<% } %> <br>
 <% if (river.comments.length) { %>
   <table>
     <thead>
