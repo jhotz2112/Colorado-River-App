@@ -1,32 +1,46 @@
 <%- include('../partials/header') %>
-
-<table id="list">
-    <thead>
-      <tr>
-        <th>River Name</th>
-        <th>GPS Location</th>
-        <th>Difficulty</th>
-        <th>Date<br>Visited</th>
-        <th>Open</th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody>
-      <% rivers.forEach(function(r) { %>
-        <tr>
-          <td><%= r.title %></td>
-          <td><%= r.longitude %> / <%= r.latitude %></td>
-          <td><%= r.difficulty %></td>
-          <td><%= r.dateVisited %></td>
-          <td><% if (r.open --- true) { %>
-            Yes
-            <%} else {%>
-            No 
-            <% } %></td>
-          <td><a href="/rivers/<%= r._id %>">Comments</a></td>
-        </tr>
-        <% }); %>
-      </tbody>
-    </table>
-
-<%- include('../partials/footer') %>
+    <main>
+        <% if (rivers.length) { %>
+        <table id="list">
+            <thead>
+                <tr>
+                    <th>River Name</th>
+                    <th>GPS Location</th>
+                    <th>Difficulty</th>
+                    <th>Date<br>Visited</th>
+                    <th>Open</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <% rivers.forEach(function(r) { %>
+                    <tr>
+                        <td>
+                            <%= r.title %>
+                        </td>
+                        <td>
+                            <%= r.longitude %> / <%= r.latitude %>
+                        </td>
+                        <td>
+                            <%= r.difficulty %>
+                        </td>
+                        <td>
+                            <%= r.dateVisited.toLocaleDateString() %>
+                        </td>
+                        <td>
+                            <% if (r.open --- true) { %>
+                                Yes
+                                <%} else {%>
+                                    No
+                                    <% } %>
+                        </td>
+                        <td><a href="/rivers/<%= r._id %>">Comments</a></td>
+                    </tr>
+                    <% }); %>
+            </tbody>
+        </table>
+        <% } else { %>
+            <h1>No Rivers Added</h1>
+        <% } %>
+    </main>
+    <%- include('../partials/footer') %>

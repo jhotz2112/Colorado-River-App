@@ -1,26 +1,21 @@
 <%- include('./partials/header') %>
-
-<!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <h1>Colorado Lakes and Rivers</h1>
-  <br><br>
-  <body>
-    <p>The Goal of this page is to show and share locations and "cool spots" on rivers and lakes in Colorado. Please leave a review of the rivers and lakes You've Visited!</p>
-    <br><br>
+  <main>
+    <h1>Colorado Lakes and Rivers</h1>
+    <p>The Goal of this page is to show and share locations and "cool spots" on rivers and lakes in Colorado. Please
+      leave
+      a review of the rivers and lakes You've Visited!</p>
     <br><br>
     <br><br>
     <br><br>
     <div>
-      <h1><%= title %></h1>
+      <a href="/rivers">
+        <h1>
+          <%= title %>
+        </h1>
+      </a>
     </div>
-    <div>
+    <div class="flex-center">
       <img src="https://static.twentytwowords.com/wp-content/uploads/camping-hedgehog-feat.jpg" id="home-pic">
-    </div>  
-    </body>
-  </html>
-  
-<%- include('./partials/footer') %>
+    </div>
+  </main>
+  <%- include('./partials/footer') %>

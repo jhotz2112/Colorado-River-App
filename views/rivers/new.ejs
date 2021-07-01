@@ -1,39 +1,25 @@
 <%- include('../partials/header') %>
-
-    <section id="show">
+    <main>
         <h1>Enter a New Lake/River</h1>
-        <form action="/rivers" method="POST">
-            <div>
-                <label>Lake/River Name:
+            <form action="/rivers" method="POST">
+                    <label>Lake/River Name:
+                    </label>
                     <input type="text" name="title">
-                </label>
-            </div>
-            <div>
-                <label>GPS Location:<br>
-                    Latitude:<br><input type="text" name="latitude"><br>
-                    Longitude:<br><input type="text" name="longitude">
-                </label>
-            </div>
-            <div>
-                <label>Difficulty:
-                    <select name="difficulty">
-                        <option value="Beginner" id="beg">Beginner</option>
-                        <option value="Intermediate" id="int">Intermediate</option>
-                        <option value="Expert" id="exp" selected>Expert</option>
-                    </select>
-                </label>
-            </div>  
-            <div>
-                <label for="dateVisited">Date Visited:</label>
-                <input type="datetime-local" id="dateVisited" name="dateVisited" value=<%=function () { return new
-                    Date().getFullYear(); } %>
-            </div>
-            <div>
-                <label>Open:</label>
-                <input type="checkbox" name="open" checked id="checkbox">
-                </label>
-            </div>
-            <input type="submit" value="Add River">
-        </form>
-
-        <%- include('../partials/footer') %>
+                    <label>GPS Latitude:</label>
+                    <input type="text" name="latitude">
+                    <label>GPS Longitude:</label>
+                    <input type="text" name="longitude">
+                    <label>Difficulty:</label>
+                        <select name="difficulty">
+                            <option value="Beginner" id="beg">Beginner</option>
+                            <option value="Intermediate" id="int">Intermediate</option>
+                            <option value="Expert" id="exp" selected>Expert</option>
+                        </select>
+                    <label for="dateVisited">Date Visited Lake/River:</label>
+                    <input type="date" id="dateVisited" name="dateVisited" value="<%= today %>">
+                    <label>Open:</label>
+                    <input type="checkbox" name="open" checked id="checkbox">
+                <br><input type="submit" value="Add River">
+            </form>
+    </main>
+<%- include('../partials/footer') %>
