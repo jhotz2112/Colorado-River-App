@@ -1,21 +1,31 @@
 <%- include('../partials/header') %>
 
-<section id="show-page">
-  <div id="div1">Lake/River: </div>
-  <div id="div"><%= river.title %></div>
-  <div id="div1">Difficulty: </div>
-  <div id="div"><%= river.difficulty %></div>
-  
-<h2>Comments</h2><br>
+<section id="show">
+  <div>
+    <div id="divshow"><u>Lake/River:</u> </div>
+    <div id="div">-><%= river.title %><-</div>
+  </div> 
+<br><br>
+  <div>
+    <div id="divshow"><u>Difficulty:</u> </div>
+    <div id="div">-><%= river.difficulty %><-</div>
+  </div>
+<br><br>
+<br><br>
+<br><br>  
+<br><br>
+<br><br>  
+<div id="comment-div">
+  <h2>Comments</h2>
 <% if (user) { %>
   <form id="add-comment-form" method="POST" action="/rivers/<%= river._id %>/comments">
     <label>Review:</label>
     <textarea name="content"></textarea><br>
     <label>Rating:</label>
     <select name="userDifficulty">
-      <option value="Beginner">Beginner</option>
-      <option value="Intermediate">Intermediate</option>
-      <option value="Expert" selected>Expert</option>
+      <option value="Beginner" id="beg">Beginner</option>
+      <option value="Intermediate" id="int">Intermediate</option>
+      <option value="Expert" id="exp" selected>Expert</option>
     </select>
     <input type="submit" value="Add Review">
   </form>
@@ -30,7 +40,7 @@
         <th></th>
       </tr>
     </thead>
-    <tbody>
+    <tbody id="tbody">
       <% river.comments.forEach(function(c) { %>
         <tr>
           <td><%= c.createdAt.toLocaleDateString() %></td>
@@ -55,8 +65,8 @@
     </tbody>
   </table>
 <% } else { %>
-  <h5>No Comments Yet</h5>
+  <h5><u><b>No Comments Yet</b></u></h5>
 <% } %>
-
+</div>
 
 <%- include('../partials/footer') %>

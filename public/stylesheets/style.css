@@ -7,12 +7,6 @@
 body {
   margin: 0;
   height: 100vh;
-  display: grid;
-  grid-template-rows: 50px 1fr;
-  grid-template-areas: 
-    "nav"
-    "main"
-    "add";
   background-image: url("https://i.imgur.com/fLH4o6y.jpeg");
   background-size: cover;
   background-position: center;
@@ -27,10 +21,15 @@ body > nav {
   padding: 0 20px 0 30px;
 }
 
-nav > img {
-  width: 50px;
-  object-fit: contain;
-  margin-right: auto;
+body > main h1:first-child {
+  margin-bottom: 50px;
+}
+
+#comment-div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 #div {
@@ -40,31 +39,80 @@ nav > img {
   align-items: center;
 }
 
-#div1 {
+#divshow {
   font-size: 2vmin;
-  padding-left: 1vmin;
+  padding: 2vmin;
   display: flex;
   align-items: center;
+  font-weight: bolder;
 }
 
-body > main {
-  grid-area: main;
+form *, .dropdown {
+  font-size: 2vmin;
+  padding: 1vmin;
+  border-radius: 5px;
+}
+
+h1 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #181a1a;
-  padding: 20px;
-  overflow-y: scroll;
+  justify-content: center;
+  font-weight: bolder;
 }
 
-body > main h1:first-child {
-  margin-bottom: 50px;
+#h1 {
+  font-size: 2vmin;
+  padding-left: 1vmin;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+}
+
+#home-pic {
+  display: flex;
+  flex-direction: column;
+  max-width: 60vmin;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5%;
+}
+
+input, select, button {
+  background-color: #222424;
+}
+
+input, textarea {
+  background-color: #222424;
+}
+
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+}
+
+.login img {
+  height: 2vmin;
+  background-color: aliceblue;
+  border-radius: 20%;
+}
+
+#list a:hover {
+  background-color: white;
+}
+
+nav > img {
+  width: 50px;
+  object-fit: contain;
+  margin-right: auto;
 }
 
 nav > a {
-  margin: 20px;
+  margin: 1vmin;
   text-decoration: none;
-  padding: 10px;
+  padding: 1vmin;
   border-radius: 5px;
 }
 
@@ -78,33 +126,27 @@ nav > a.active {
   cursor: default;
 }
 
-#new-form {
-  display: grid;
-  grid-gap: 10px;
-  grid-template-columns: repeat(2, minmax(auto, 22rem));
+p {
+  display: flex;
+  font-size: 3vmin;
+  padding: 5vmin;
+  font-weight: bolder;
 }
 
-form *, 
-.dropdown {
-  font-size: 20px;
-  padding: 5px;
-  border-radius: 5px;
-}
-
-#new-form input[type="submit"] {
-  grid-column: span 2;
-  width: 10rem;
-  margin-left: auto;
+#tbody {
+  font-size: 2vmin;
+  padding-left: 3vmin;
+  align-items: center;
 }
 
 table {
-  font-size: 20px;
-  /* All rivers */
+  font-size: 2vmin;
+  font-weight: bolder;
 }
 
 table thead th {
   padding: 5px;
-  border-bottom: 2px solid #424748;
+  border-bottom: .5vmin solid #000000;
 }
 
 table td {
@@ -112,97 +154,11 @@ table td {
   text-align: center;
 }
 
-#list td:nth-child(2), #list td:nth-child(3){
-  min-width: 100px;
-}
-
-#list a {
-  border-radius: 4px;
-  background-color: #5f6567;
-  padding: 4px;
-  text-decoration: none;
-  font-size: 14px;
-}
-
-#list a:hover {
-  background-color: white;
-}
-
-#show-page {
-  display: grid;
-  grid-template-columns: auto auto;
-  grid-gap: 1rem;
-}
-
-#show-page div:nth-child(even) {
+#show {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-weight: bold;
 }
 
-
-
-
-/* 
-ul {
-  margin: 0 0 1rem;
-  padding: 0;
-  list-style: none;
-}
-	
-li {
-  font-weight: bold;
-}
-
-hr {
-  color: #000000
-} */
-
-#badge-container {
-  display: flex;
-  width: 80%;
-  border: 2px solid #222424;
-  border-radius: .5rem;
-  margin: .5rem 0 2rem;
-}
-
-.badge {
-  background-color: #36393a;
-  padding: .5rem;
-  margin: 1rem;
-  border-radius: .3rem;
-  font-size: .8rem;
-  text-align: center;
-}
-
-.login {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 34px;
-}
-
-.login img {
-  height: 30px;
-}
-
-.review-user {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-input {
-  background-color: #222424;
-}
-
-select {
-  background-color: #222424;
-}
-
-button {
-  background-color: #222424;
-}
-
-#review {
-  background-color: #222424;
-}
 

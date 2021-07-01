@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Colorado Yak</title>
-    <nav><a href="/">HOME</a></nav>
-</head>
+   </head>
 <body>
     <nav>
       <img src="https://i.imgur.com/EBCKVZk.jpeg">
+      <a href="/">HOME</a>
       <a href="/rivers" <%- title === 'All Rivers' ? 'class="active"' : '' %>>ALL LAKES/RIVERS</a>
       <% if (user) { %>
         <a href="/rivers/new" <%- title === 'Add River' ? 'class="active"' : '' %>>ADD LAKE/RIVER</a>
