@@ -11,10 +11,10 @@ passport.use(
       callbackURL: process.env.GOOGLE_CALLBACK
     },
     // The verify callback function
-    function(accessToken, refreshToken, profile, cb) {
+    function (accessToken, refreshToken, profile, cb) {
       // a user has logged in with OAuth...
-      User.findOne({googleId: profile.id})
-        .then(async function(user) {
+      User.findOne({ googleId: profile.id })
+        .then(async function (user) {
           if (user) return cb(null, user);
           // We have a brand new user via OAuth
           try {
@@ -33,11 +33,11 @@ passport.use(
   )
 );
 
-passport.serializeUser(function(user, cb) {
+passport.serializeUser(function (user, cb) {
   cb(null, user._id);
 });
 
-passport.deserializeUser(async function(userId, cb) {
+passport.deserializeUser(async function (userId, cb) {
   const user = await User.findById(userId);
   cb(null, user);
 });

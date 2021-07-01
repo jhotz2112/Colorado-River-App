@@ -17,7 +17,7 @@ const riverSchema = new Schema({
         type: String,
         required: true
     },
-    latitude: String,
+    lattitude: String,
     longitude: String,
     difficulty: {
         type: String,

@@ -82,7 +82,7 @@ h1 {
   font-weight: bolder;
 }
 
-#home-pic, #the-pot {
+#home-pic {
   display: flex;
   flex-direction: column;
   max-width: 60vmin;

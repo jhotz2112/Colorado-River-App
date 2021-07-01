@@ -1,72 +1,81 @@
 <%- include('../partials/header') %>
 
-<section id="show">
-  <div>
-    <div id="divshow"><u>Lake/River:</u> </div>
-    <div id="div">-> <%= river.title %> <-</div>
-  </div> 
-<br><br>
-  <div>
-    <div id="divshow"><u>Difficulty:</u> </div>
-    <div id="div">-> <%= river.difficulty %> <-</div>
-  </div>
-<br><br>
-<br><br>
-<br><br>  
-<br><br>
-<br><br>  
-<div id="comment-div">
-  <h2>Comments</h2>
-<% if (user) { %>
-  <form id="add-comment-form" method="POST" action="/rivers/<%= river._id %>/comments">
-    <label>Review:</label>
-    <textarea name="content"></textarea><br>
-    <label>Rating:</label>
-    <select name="userDifficulty">
-      <option value="Beginner" id="beg">Beginner</option>
-      <option value="Intermediate" id="int">Intermediate</option>
-      <option value="Expert" id="exp" selected>Expert</option>
-    </select>
-    <input type="submit" value="Add Review">
-  </form>
-<% } %> <br>
-<% if (river.comments.length) { %>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Review</th>
-        <th></th>
-        <th></th>
-      </tr>
-    </thead>
-    <tbody id="tbody">
-      <% river.comments.forEach(function(c) { %>
-        <tr>
-          <td><%= c.createdAt.toLocaleDateString() %></td>
-          <td><%= c.content %></td>
-          <td><%= c.userDifficulty %></td>
-          <td><% if (user && user._id.equals(c.user)) { %>
-            <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
-              <input name="content" id="review" value="<%= c.content %>">
-              <button type="submit">Update Review</button>
+  <section id="show">
+    <div>
+      <div id="divshow"><u>Lake/River:</u> </div>
+      <div id="div">-> <%= river.title %>
+          <-< /div>
+      </div>
+      <br><br>
+      <div>
+        <div id="divshow"><u>Difficulty:</u> </div>
+        <div id="div">-> <%= river.difficulty %>
+            <-< /div>
+        </div>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <br><br>
+        <div id="comment-div">
+          <h2>Comments</h2>
+          <% if (user) { %>
+            <form id="add-comment-form" method="POST" action="/rivers/<%= river._id %>/comments">
+              <label>Review:</label>
+              <textarea name="content"></textarea><br>
+              <label>Rating:</label>
+              <select name="userDifficulty">
+                <option value="Beginner" id="beg">Beginner</option>
+                <option value="Intermediate" id="int">Intermediate</option>
+                <option value="Expert" id="exp" selected>Expert</option>
+              </select>
+              <input type="submit" value="Add Review">
             </form>
-            <% } %>
-          </td>
-          <td>
-            <% if (user && user._id.equals(c.user)) { %>
-              <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
-                <button type="submit">X</button>
-              </form>
-            <% } %>
-          </td>
-        </tr>
-      <% }); %>
-    </tbody>
-  </table>
-<% } else { %>
-  <h5><u><b>No Comments Yet</b></u></h5>
-<% } %>
-</div>
+            <% } %> <br>
+              <% if (river.comments.length) { %>
+                <table>
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Review</th>
+                      <th></th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tbody id="tbody">
+                    <% river.comments.forEach(function(c) { %>
+                      <tr>
+                        <td>
+                          <%= c.createdAt.toLocaleDateString() %>
+                        </td>
+                        <td>
+                          <%= c.content %>
+                        </td>
+                        <td>
+                          <%= c.userDifficulty %>
+                        </td>
+                        <td>
+                          <% if (user && user._id.equals(c.user)) { %>
+                            <form action="/comments/<%= c._id %>?_method=PUT" method="POST">
+                              <input name="content" id="review" value="<%= c.content %>">
+                              <button type="submit">Update Review</button>
+                            </form>
+                            <% } %>
+                        </td>
+                        <td>
+                          <% if (user && user._id.equals(c.user)) { %>
+                            <form action="/comments/<%= c._id %>?_method=DELETE" method="POST">
+                              <button type="submit">X</button>
+                            </form>
+                            <% } %>
+                        </td>
+                      </tr>
+                      <% }); %>
+                  </tbody>
+                </table>
+                <% } else { %>
+                  <h5><u><b>No Comments Yet</b></u></h5>
+                  <% } %>
+        </div>
 
-<%- include('../partials/footer') %>
+ <%- include('../partials/footer') %>
