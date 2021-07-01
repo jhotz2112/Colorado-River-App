@@ -10,6 +10,8 @@ body {
   background-image: url("https://i.imgur.com/fLH4o6y.jpeg");
   background-size: cover;
   background-position: center;
+  justify-content: center;
+  align-items: center;
 }
 
 body > nav {
@@ -129,7 +131,7 @@ nav > a.active {
 p {
   display: flex;
   font-size: 3vmin;
-  padding: 5vmin;
+  padding: 8vmin;
   font-weight: bolder;
 }
 
