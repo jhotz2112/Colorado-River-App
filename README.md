@@ -26,6 +26,8 @@ ADD LAKES/RIVERS
 - Javascript
 - Google OAuth
 - Github
+- [Trello](https://trello.com/b/ONSoTkgu/unit-2-project "Trello Board")
+
 
 ---
 
