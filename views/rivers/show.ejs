@@ -3,16 +3,15 @@
   <section id="show">
     <div>
       <div id="divshow"><u>Lake/River:</u> </div>
-      <div id="divshow">-> <%= river.title %> <-
+      <div id="divshow">
+        <%= river.title %>
       </div>
       <br><br>
       <div>
         <div id="divshow"><u>Difficulty:</u> </div>
-        <div id="divshow">-> <%= river.difficulty %> <-
+        <div id="divshow">
+          <%= river.difficulty %>
         </div>
-        <br><br>
-        <br><br>
-        <br><br>
         <br><br>
         <br><br>
         <div id="comment-div">
@@ -75,5 +74,8 @@
                   <h5><u><b>No Reviews Yet</b></u></h5>
                   <% } %>
         </div>
+      </div>
+    </div>
+  </section>
 
- <%- include('../partials/footer') %>
+  <%- include('../partials/footer') %>

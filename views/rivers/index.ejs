@@ -16,8 +16,9 @@
                 <tbody>
                     <% rivers.forEach(function(r) { %>
                         <tr>
-                            <td>
-                                <%= r.title %>
+                            <td><a href="/rivers/<%= r._id %>">
+                                    <%= r.title %>
+                                </a>
                             </td>
                             <td>
                                 <%= r.longitude %> / <%= r.latitude %>
@@ -45,4 +46,4 @@
                 <% } %>
     </main>
 
-<%- include('../partials/footer') %>
+    <%- include('../partials/footer') %>

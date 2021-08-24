@@ -32,6 +32,9 @@ body > main h1:first-child {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  background-color: rgb(120, 86, 86);
+  border: 4px solid rgb(65, 47, 47);
+  border-radius: 5%;
 }
 
 #div {
@@ -39,6 +42,7 @@ body > main h1:first-child {
   padding-left: 1vmin;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #divshow {
@@ -48,6 +52,9 @@ body > main h1:first-child {
   align-items: center;
   justify-content: center;
   font-weight: bolder;
+  background-color: rgb(120, 86, 86);
+  border: 4px solid rgb(65, 47, 47);
+  border-radius: 5%;
 }
 
 .flex-center {
@@ -63,6 +70,7 @@ form *, .dropdown {
 }
 form {
   display: grid;
+  justify-content: center;
   grid-template-columns: auto auto;
   gap: 5px;
 }
@@ -73,6 +81,9 @@ h1 {
   align-items: center;
   justify-content: center;
   font-weight: bolder;
+  background-color: rgb(120, 86, 86);
+  border: 4px solid rgb(65, 47, 47);
+  border-radius: 5%;
 }
 
 #h1 {
@@ -80,7 +91,7 @@ h1 {
   padding-left: 1vmin;
   align-items: center;
   justify-content: center;
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 #home-pic {
@@ -90,11 +101,13 @@ h1 {
   align-items: center;
   justify-content: center;
   border-radius: 5%;
-  border: 4px solid tomato;
+  border: 4px solid rgb(250, 140, 120);
 }
 
 input, select, button, textarea  {
-  background-color: #222424;
+  background-color: rgb(193, 138, 138);
+  border: 4px solid rgb(43, 31, 31);
+  margin: 2px;
 }
 
 .login {
@@ -110,8 +123,19 @@ input, select, button, textarea  {
   border-radius: 20%;
 }
 
+#list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(181, 129, 129);
+  opacity: 0.8; 
+  border-radius: 5%;
+  border: 4px solid rgb(120, 86, 86);
+}
+
 #list a:hover {
-  background-color: white;
+  background-color: rgb(85, 84, 84);
 }
 
 main {
@@ -147,9 +171,12 @@ nav > a.active {
 
 p {
   display: flex;
-  font-size: 3vmin;
+  font-size: 2vmin;
   padding: 8vmin;
-  font-weight: bolder;
+  font-weight: bold;
+  background-color: rgb(120, 86, 86);
+  border: 4px solid rgb(65, 47, 47);
+  border-radius: 5%;
 }
 
 #tbody {
@@ -173,11 +200,23 @@ table td {
   text-align: center;
 }
 
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 #show {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   font-weight: bold;
+  background-color: rgb(181, 129, 129);
+  opacity: 0.8; 
+  border-radius: 5%;
+  border: 4px solid rgb(120, 86, 86);
 }
 
 
