@@ -5,12 +5,11 @@
             <table id="list">
                 <thead>
                     <tr>
-                        <th>River Name</th>
-                        <th>GPS Location</th>
-                        <th>Difficulty</th>
-                        <th>Date<br>Visited</th>
+                        <th>River Name |</th>
+                        <th>GPS Location |</th>
+                        <th>Difficulty |</th>
+                        <th>Date<br>Visited |</th>
                         <th>Open</th>
-                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -19,24 +18,27 @@
                             <td><a href="/rivers/<%= r._id %>">
                                     <%= r.title %>
                                 </a>
+                                &nbsp;|&nbsp;
                             </td>
                             <td>
                                 <%= r.longitude %> / <%= r.latitude %>
+                                &nbsp;|&nbsp;
                             </td>
                             <td>
                                 <%= r.difficulty %>
+                                &nbsp;|&nbsp;
                             </td>
                             <td>
                                 <%= r.dateVisited.toLocaleDateString() %>
+                                &nbsp;|&nbsp;
                             </td>
                             <td>
-                                <% if (r.open --- true) { %>
+                                <% if (r.open === true) { %>
                                     Yes
                                     <%} else {%>
                                         No
                                         <% } %>
                             </td>
-                            <td><a href="/rivers/<%= r._id %>">Comments</a></td>
                         </tr>
                         <% }); %>
                 </tbody>
